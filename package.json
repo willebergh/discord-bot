@@ -4,13 +4,14 @@
   "description": "",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node app.js",
+    "dev": "nodemon app.js"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/willebergh/discord-bot.git"
   },
-  "author": "",
+  "author": "William Bergh",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/willebergh/discord-bot/issues"
