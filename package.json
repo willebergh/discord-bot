@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/willebergh/discord-bot#readme",
   "dependencies": {
+    "config": "^3.1.0",
     "discord.js": "^11.4.2"
   }
 }

@@ -1,4 +1,5 @@
 const Discord = require('discord.js');
+const config = require("config");
 const client = new Discord.Client();
 
 client.on('ready', () => {
@@ -12,6 +13,7 @@ client.on('ready', () => {
 
 // Create an event listener for messages
 client.on('message', message => {
+    console.log(message)
     // If the message is "ping"
     if (message.content === 'ping') {
         // Send "pong" to the same channel
@@ -78,4 +80,4 @@ function gayCheckCommand(arguments, receivedMessage) {
     }
 }
 
-client.login('NTczNDY4MDI3MDY5MjY3OTY5.XMrnEA.QztwWQKDWio4JC7SmCZ-WygTawU');
+client.login(config.get("discord-token"));
