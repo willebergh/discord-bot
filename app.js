@@ -6,16 +6,7 @@ const config = require("config");
 const app = express();
 const client = new Discord.Client();
 
-app.use("/", (req, res) => {
-    res.send("Discord")
-    axios.get("https://discordapp.com/api/users/@me/guilds", {
-        headers: {
-            token: "B2brnXCQKHeqOUKQEhBBR83eGSN27c"
-        }
-    })
-        .then(res => console.log(res.data))
-        .catch(err => console.log(err))
-});
+app.use("/api/guild", require("./routes/api/guild"));
 
 
 
