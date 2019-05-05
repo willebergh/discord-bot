@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>My First OAuth2 App</title>
+</head>
+
+<body>
+    <div id="info">
+        Hoi!
+    </div>
+    <a id="login" style="display: none;"
+        href="https://discordapp.com/api/oauth2/authorize?client_id=573468027069267969&redirect_uri=http%3A%2F%2Flocalhost%3A5000%2Fapi%2Fuser&response_type=code&scope=identify%20guilds%20connections">
+        Identify Yourself
+    </a>
+    <script>
+        function generateRandomString() {
+            const rand = Math.floor(Math.random() * 10);
+            let randStr = '';
+            for (let i = 0; i < 20 + rand; i++) {
+                randStr += String.fromCharCode(33 + Math.floor(Math.random() * 94));
+            }
+            return randStr;
+        }
+        window.onload = () => {
+            const match = window.location.hash.match(/access_token=(.+?)&token_type=(.+?)&state=(.+?)(?:&|$)/);
+            if (match) {
+                const [, access_token, token_type, urlState] = match;
+                const stateParameter = localStorage.getItem('stateParameter');
+                if (btoa(stateParameter) !== decodeURIComponent(urlState)) {
+                    console.log('You may have been clickjacked!');
+                    return;
+                }
+                fetch('https://discordapp.com/api/users/@me', {
+                    headers: {
+                        authorization: `${token_type} ${access_token}`
+                    }
+                })
+                    .then(res => res.json())
+                    .then(response => {
+                        console.log(response);
+                        const { username, discriminator } = response;
+                        document.getElementById('info').innerText += ` ${username}#${discriminator}`;
+                    })
+                    .catch(error => {
+                        console.error;
+                        document.getElementById('info').innerText += error;
+                    });
+            }
+            else {
+                const randStr = generateRandomString();
+                localStorage.setItem('stateParameter', randStr);
+                document.getElementById('login').href += `&state=${btoa(randStr)}`;
+                document.getElementById('login').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+
+</html>
