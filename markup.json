@@ -1,0 +1,93 @@
+{
+    "object_kind": "pipeline",
+    "object_attributes": {
+        "id": 21,
+        "ref": "master",
+        "tag": false,
+        "sha": "aa726ef5276975cbfb5ce649453af97409816c5a",
+        "before_sha": "0000000000000000000000000000000000000000",
+        "status": "failed",
+        "detailed_status": "failed",
+        "stages": [
+            "build",
+            "test"
+        ],
+        "created_at": "2019-05-17T11: 41: 19.296Z",
+        "finished_at": "2019-05-17T11: 41: 21.292Z",
+        "duration": 0,
+        "variables": []
+    },
+    "user": {
+        "name": "William Bergh",
+        "username": "willebergh",
+        "avatar_url": "https://secure.gravatar.com/avatar/31d078af3f4b6ea5c49dd629ebc09cad?s=80&d=identicon"
+    },
+    "project": {
+        "id": 8,
+        "name": "willebergh.io",
+        "description": "",
+        "web_url": "https: //gitlab.dampgang.com/willebergh/willebergh.io",
+        "avatar_url": null,
+        "git_ssh_url": "git@gitlab.dampgang.com:willebergh/willebergh.io.git",
+        "git_http_url": "https: //gitlab.dampgang.com/willebergh/willebergh.io.git",
+        "namespace": "willebergh",
+        "visibility_level": 10,
+        "path_with_namespace": "willebergh/willebergh.io",
+        "default_branch": "master",
+        "ci_config_path": null
+    },
+    "commit": {
+        "id": "aa726ef5276975cbfb5ce649453af97409816c5a",
+        "message": "Initial commit",
+        "timestamp": "2019-05-17T11: 41: 17Z",
+        "url": "https: //gitlab.dampgang.com/willebergh/willebergh.io/commit/aa726ef5276975cbfb5ce649453af97409816c5a",
+        "author": {
+            "name": "William Bergh",
+            "email": "willebergh@outlook.com"
+        }
+    },
+    "builds": [
+        {
+            "id": 48,
+            "stage": "build",
+            "name": "build",
+            "status": "failed",
+            "created_at": "2019-05-17T11: 41: 19.307Z",
+            "started_at": "2019-05-17T11: 41: 19.990Z",
+            "finished_at": "2019-05-17T11: 41: 20.902Z",
+            "when": "on_success",
+            "manual": false,
+            "user": "[Object]",
+            "runner": "[Object]",
+            "artifacts_file": "[Object]"
+        },
+        {
+            "id": 50,
+            "stage": "test",
+            "name": "code_quality",
+            "status": "skipped",
+            "created_at": "2019-05-17T11: 41: 19.375Z",
+            "started_at": null,
+            "finished_at": null,
+            "when": "on_success",
+            "manual": false,
+            "user": "[Object]",
+            "runner": null,
+            "artifacts_file": "[Object]"
+        },
+        {
+            "id": 49,
+            "stage": "test",
+            "name": "test",
+            "status": "skipped",
+            "created_at": "2019-05-17T11: 41: 19.347Z",
+            "started_at": null,
+            "finished_at": null,
+            "when": "on_success",
+            "manual": false,
+            "user": "[Object]",
+            "runner": null,
+            "artifacts_file": "[Object]"
+        }
+    ]
+}
